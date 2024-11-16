@@ -36,6 +36,23 @@ exports.getContacts = async (req, res) => {
     res.status(500).json({ success: false, message: 'Server Error: Unable to fetch contacts.' });
   }
 };
+// Get contact by email
+exports.getContactByEmail = async (req, res) => {
+  const { email } = req.params;
+  try {
+      const contact = await Contact.findOne({ email });
+
+      if (!contact) {
+          return res.status(404).json({ message: 'Contact not found' }); // Return 404 if contact is not found
+      }
+
+      return res.status(200).json(contact); // Successfully found the contact
+  } catch (error) {
+      console.error(error);
+      return res.status(500).json({ message: 'Server error' }); // Handle unexpected errors
+  }
+};
+
 
 // Update a specific contact by email
 exports.updateContact = async (req, res) => {

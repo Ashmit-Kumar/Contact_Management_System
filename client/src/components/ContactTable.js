@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Button } from '@mui/material';
-import { deleteContact, getContacts } from '../api/contactAPI';
+import { deleteContact } from '../api/contactAPI';
 import TablePaginationComponent from './TablePagination'; // Import the pagination component
 
 const ContactTable = ({ contacts, onContactDeleted }) => {

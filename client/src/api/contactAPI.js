@@ -29,13 +29,24 @@ export const createContact = async (contactData) => {
 // Update an existing contact by 'email'
 export const updateContact = async (contactData) => {
   try {
-      const response = await axios.put(`${API_URL}/${contactData.email}`, contactData);  // Send email as identifier
-      return response.data;
+    console.log('Updating contact with data:', contactData);  // Log the data being sent
+    const response = await axios.put(`${API_URL}/${contactData.email}`, contactData);  // Send email as identifier
+    console.log('Update Response:', response);  // Log the response to check if the API returns as expected
+    return response.data;
   } catch (error) {
-      console.error('Error updating contact:', error);
-      throw error;
+    console.error('Error updating contact:', error);
+    throw error;
   }
 };
+// export const updateContact = async (contactData) => {
+//   try {
+//       const response = await axios.put(`${API_URL}/${contactData.email}`, contactData);  // Send email as identifier
+//       return response.data;
+//   } catch (error) {
+//       console.error('Error updating contact:', error);
+//       throw error;
+//   }
+// };
 
 // Delete a contact by 'email'
 export const deleteContact = async (email) => {
@@ -45,5 +56,16 @@ export const deleteContact = async (email) => {
   } catch (error) {
       console.error('Error deleting contact:', error);
       throw error;
+  }
+};
+
+export const getContactByEmail = async (email) => {
+  try {
+    const response = await axios.get(`${API_URL}/${email}`);
+    console.log(response.data)
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching contact by email:', error);
+    throw error;
   }
 };
