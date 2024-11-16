@@ -9,7 +9,7 @@ import EditContact from './pages/EditContact';
 const App = () => {
   return (
     <Router>
-      <Navbar />  {/* Add Navbar here */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/add-contact" element={<AddContact />} />
@@ -20,3 +20,5 @@ const App = () => {
 };
 
 export default App;
+
+//last updated
