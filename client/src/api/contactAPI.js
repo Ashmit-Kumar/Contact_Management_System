@@ -2,7 +2,8 @@
 import axios from 'axios';
 
 // API URL that matches your backend endpoint
-const API_URL = 'http://localhost:5000/api/contacts';
+// const API_URL = 'http://localhost:5000/api/contacts';
+const API_URL = process.env.REACT_APP_API_URL;
 
 // Fetch all contacts
 export const getContacts = async () => {
