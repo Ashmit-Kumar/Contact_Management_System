@@ -20,10 +20,10 @@ const Dashboard = () => {
     fetchContacts();
   }, []);
 
-  const handleContactDeleted = (id) => {
-    setContacts(contacts.filter(contact => contact.id !== id));
+  const handleContactDeleted = (email) => {
+    // Filter out the deleted contact by matching the email
+    setContacts(contacts.filter(contact => contact.email !== email));
   };
-
   return (
     <div>
       <h1>Contact Management</h1>
