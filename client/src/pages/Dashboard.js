@@ -1,6 +1,6 @@
 // src/pages/Dashboard.js
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import ContactTable from '../components/ContactTable';
 import { getContacts} from '../api/contactAPI';
 
@@ -27,9 +27,9 @@ const Dashboard = () => {
   return (
     <div>
       <h1>Contact Management</h1>
-      <Link to="/add-contact">
+      {/* <Link to="/add-contact">
         <button>Add New Contact</button>
-      </Link>
+      </Link> */}
       <ContactTable contacts={contacts} onContactDeleted={handleContactDeleted} />
     </div>
   );

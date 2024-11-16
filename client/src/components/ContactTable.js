@@ -72,7 +72,7 @@ const ContactTable = ({ contacts, onContactDeleted }) => {
                 <TableCell>{contact.company}</TableCell>
                 <TableCell>{contact.jobTitle}</TableCell>
                 <TableCell>
-                  <Button color="secondary" onClick={() => handleDelete(contact.email)}>Delete</Button>
+                  <Button color="primary" onClick={() => handleDelete(contact.email)}>Delete</Button>
                 </TableCell>
               </TableRow>
             ))}
